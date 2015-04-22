@@ -6,9 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
-import android.widget.Button;
-import android.view.View.OnClickListener;
-import android.view.View;
 import android.widget.Toast;
 import android.content.Context;
 import android.app.AlertDialog;
@@ -27,37 +24,10 @@ public class MainActivity extends ActionBarActivity {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-
-        //mWebView.getSettings().setAppCacheEnabled(false);
-        //webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-
-        mWebView.loadUrl("file:///android_asset/index.html");
-
-        Button toastButton = (Button) this.findViewById(R.id.toastButton);
-        toastButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                simpleFunction();
-                String data = "json{'name':'Claudio','age':'33'}";
-                mWebView.loadUrl("javascript:showTest(\""+data+"\")");
-            }
-        });
-
-        final MyJavaScriptInterface myJavaScriptInterface
-                = new MyJavaScriptInterface(this);
-        mWebView.addJavascriptInterface(myJavaScriptInterface, "AndroidFunction");
-
+        mWebView.loadUrl("file:///android_asset/index_connect.html");
     }
 
-    public void simpleFunction(){
-        Toast.makeText(getApplicationContext(), "This is a plain toast.", Toast.LENGTH_SHORT).show();
-    }
-
-    public void openButton(View view){
-        Toast.makeText(getApplicationContext(), "Executing function open button.", Toast.LENGTH_SHORT).show();
-        mWebView.loadUrl("file:///android_asset/index.html");
-    }
-
-    public void openURL(String url) {
+   public void openURL(String url) {
         Random rand= new Random();
         int number=rand.nextInt(100);
         mWebView.loadUrl("file:///android_asset/"+url+"?time="+number);
@@ -101,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.menu_connection:
-                openURL("index.html");
+                openURL("index_connect.html");
                 return true;
             case R.id.menu_tv:
                 openURL("index_tv.html");
