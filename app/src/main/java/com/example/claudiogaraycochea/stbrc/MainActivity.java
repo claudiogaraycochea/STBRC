@@ -13,6 +13,8 @@ import android.widget.Toast;
 import android.content.Context;
 import android.app.AlertDialog;
 
+import java.util.Random;
+
 public class MainActivity extends ActionBarActivity {
 
     private WebView mWebView;
@@ -24,6 +26,10 @@ public class MainActivity extends ActionBarActivity {
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+
+        //mWebView.getSettings().setAppCacheEnabled(false);
+        //webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
         mWebView.loadUrl("file:///android_asset/index.html");
 
@@ -51,9 +57,12 @@ public class MainActivity extends ActionBarActivity {
         mWebView.loadUrl("file:///android_asset/index.html");
     }
 
-    public void openURL(String url){
-
-        mWebView.loadUrl("file:///android_asset/"+url);
+    public void openURL(String url) {
+        Random rand= new Random();
+        int number=rand.nextInt(100);
+        mWebView.loadUrl("file:///android_asset/"+url+"?time="+number);
+        String result=mWebView.getUrl();
+        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
     }
 
     public class MyJavaScriptInterface {
@@ -92,7 +101,7 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.menu_connection:
-                simpleFunction();
+                openURL("index.html");
                 return true;
             case R.id.menu_tv:
                 openURL("index_tv.html");

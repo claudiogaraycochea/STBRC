@@ -1,4 +1,4 @@
-    function getLocalVar(name){
+ /*   function getLocalVar(name){
         return sessionStorage.getItem(name);
     }
 
@@ -23,3 +23,4 @@
         document.write("<script type='text/javascript' src='"+host+"engine/0/js/sharesmartphone-noconnect.js'></"+"script>");
     }
 
+*/

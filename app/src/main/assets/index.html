@@ -7,8 +7,14 @@
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/sharesmartphone.js"></script>
     <script>
+
+        function getURLParam(name){
+            if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+            return decodeURIComponent(name[1]);
+        }
+
         $(document).ready(function() {
-            
+            $('.js-div').html("Time: "+getURLParam("time"));
         });	
      
     </script>
@@ -16,6 +22,9 @@
 <body class="background-blue">
     <div class="">
         <h1>Escanear dispositivo</h1>
+        <div class="js-div">
+            Entry
+        </div>
     </div>
 </body>
 </html>
