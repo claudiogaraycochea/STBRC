@@ -3,8 +3,8 @@ body{
   line-height: 120%;
   text-align: center;
   text-shadow: inset 1px 1px 1px 1px #999999;
-  font-size: 16px;
-  background: #60bcde;
+  font-size: 18px;
+  background: #161d25;
   color: #FFFFFF;
 }
 
@@ -96,8 +96,8 @@ h2 {
   color: #fff;
 }
 .btn.red{
-  background-color: #e8452d;
-  border: 0px solid #e8452d;
+  background-color: #cc2a35;
+  border: 0px solid #cc2a35;
   color: #fff;
 }
 .btn:disabled {
