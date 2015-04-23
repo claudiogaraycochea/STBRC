@@ -118,7 +118,7 @@ h2 {
   border: 1px solid #000000;
   background-color: #222222;
   color: #FFFFFF;
-  width: 100%;
+  width: auto;
 }
 .inp.text.small{
   padding: 5px 10px;
@@ -158,6 +158,37 @@ h2 {
   height: 128px;
 }
 
+.icon-tv {
+  background-image: url("../img/icon-tv.png");
+  width: 32px;
+  height: 32px;
+}
+
 h1{
   font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  width: auto; 
+  height: auto; 
+  overflow: scroll;
+}
+
+li {
+  padding: 10px;
+  text-align: left;
+}
+
+.wrapper-header{
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  background-color: #222222;
+  padding: 10px;
+}
+.wrapper-body{
+  margin-top: 90px;
 }
