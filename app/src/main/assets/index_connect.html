@@ -14,20 +14,20 @@
         }
 
         $(document).ready(function() {
-            $('.js-div').html("Time: "+getURLParam("time"));
+            //$('.js-div').html("Time: "+getURLParam("time"));
         });	
      
     </script>
 </head>
 <body>
     <div class="">
-    	ESCANEAR DISPOSITIVO
-        <div class="js-div"></div>
-		
-		<button class="js-btn-up btn"><i class="icon-up"></i></button>
-		<button class="js-btn-down btn"><i class="icon-down"></i></button>
-		<button class="js-btn-left btn"><i class="icon-left"></i></button>
-		<button class="js-btn-right btn"><i class="icon-right"></i></button>
+    	<h1>ESCANEAR DISPOSITIVO</h1>
+        <div class="js-div">
+            <p>
+                Buscando dispositivo STB en tu red Wifi. Verifique que el dispositivo este encendido. 
+            </p>
+            <i class="icon-loading"></i>
+        </div>
     </div>
 </body>
 </html>

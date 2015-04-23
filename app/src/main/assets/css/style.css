@@ -141,3 +141,23 @@ h2 {
   border-box; 
   max-width: 500px;
 }
+
+
+[class^="icon-"],
+[class*=" icon-"],
+[class^="button-"],
+[class*=" button-"] {
+  vertical-align: middle;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.icon-loading {
+  background-image: url("../img/icon-loading.gif");
+  width: 128px;
+  height: 128px;
+}
+
+h1{
+  font-size: 20px;
+}
